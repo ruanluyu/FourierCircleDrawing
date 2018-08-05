@@ -1,7 +1,7 @@
 float datas[][] = null;
 float rp[][] = null;
 int maxCircle = -1;//Max num off circle,unlimited when it is -1
-float rotationSpeed = 0.03f;//Speed of rotation
+float rotationSpeed = 0.001f;//Speed of rotation
 
 void setup() {
 

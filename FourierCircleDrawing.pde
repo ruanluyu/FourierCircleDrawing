@@ -1,6 +1,7 @@
 float datas[][] = null;
 float rp[][] = null;
-int maxCircle = -1;
+int maxCircle = -1;//Max num off circle,unlimited when it is -1
+float rotationSpeed = 0.03f;//Speed of rotation
 
 void setup() {
 
@@ -17,7 +18,7 @@ void setup() {
     rp[i][0] = sqrt(datas[i][0]*datas[i][0]+datas[i][1]*datas[i][1]);
     rp[i][1] = atan2(datas[i][1],datas[i][0]);
   }
-  size(1280, 720);
+  size(1920, 1080);
   spot = createGraphics(width, height);
   coord = createGraphics(width, height);
   coord.beginDraw();
@@ -26,16 +27,16 @@ void setup() {
   coord.line(coord.width/2f, 0, coord.width/2f, coord.height);
   coord.endDraw();
 }
-PVector size = new PVector(.5, .5); // pixel/unit
+PVector size = new PVector(1, 1); // pixel/unit
 PGraphics spot = null;
 PGraphics coord = null;
 PVector lastPos = new PVector();
-float t = -0.3f;
+float t = -0.3f;//init t.If you want program to start drawing at beginning,set this to 0.
 int reversey = 1;
 
 void draw() {
   background(255);
-  t+=0.03f;
+  t+=rotationSpeed;
   image(coord, 0, 0);
   PVector center = new PVector();
   PVector pointer = new PVector();

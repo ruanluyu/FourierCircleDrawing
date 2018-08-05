@@ -29,7 +29,7 @@ def numSolve(m,cs,ce,pts):
 
 
 
-steps = 500
+steps = 1000
 points = []
 out = []
 center = [500,500]

@@ -1,5 +1,6 @@
 float datas[][] = null;
 float rp[][] = null;
+int maxCircle = -1;
 
 void setup() {
 
@@ -16,7 +17,7 @@ void setup() {
     rp[i][0] = sqrt(datas[i][0]*datas[i][0]+datas[i][1]*datas[i][1]);
     rp[i][1] = atan2(datas[i][1],datas[i][0]);
   }
-  size(1920, 1080);
+  size(1280, 720);
   spot = createGraphics(width, height);
   coord = createGraphics(width, height);
   coord.beginDraw();
@@ -25,7 +26,7 @@ void setup() {
   coord.line(coord.width/2f, 0, coord.width/2f, coord.height);
   coord.endDraw();
 }
-PVector size = new PVector(1, 1); // pixel/unit
+PVector size = new PVector(.5, .5); // pixel/unit
 PGraphics spot = null;
 PGraphics coord = null;
 PVector lastPos = new PVector();
@@ -34,13 +35,14 @@ int reversey = 1;
 
 void draw() {
   background(255);
-  t+=0.005f;
+  t+=0.03f;
   image(coord, 0, 0);
   PVector center = new PVector();
   PVector pointer = new PVector();
   noFill();
   stroke(255);
-  for (int i = 0; i<datas.length; i++) {
+  int num = (maxCircle>0)?min(maxCircle,datas.length):datas.length;
+  for (int i = 0; i<num; i++) {
     int m = 0;
     if (i>0) m = ((i+1)/2)*((i%2 == 0)?-1:1);
     float r = rp[i][0];
@@ -58,12 +60,12 @@ void draw() {
   ellipse(pointer.x*size.x+width/2f, reversey*pointer.y*size.y+height/2f, 8, 8);
   if(t>=0){
     spot.beginDraw();
-    spot.noStroke();
+    //spot.noStroke();
     spot.stroke(0, 155, 255);
     spot.strokeWeight(3);
     spot.fill(0, 155, 255);
     spot.translate(spot.width/2f, spot.height/2f);
-    spot.line(lastPos.x,lastPos.y,pointer.x,pointer.y);
+    spot.line(lastPos.x*size.x,lastPos.y*size.y,pointer.x*size.x,pointer.y*size.y);
     //spot.ellipse(pointer.x*size.x, reversey*pointer.y*size.y, 5, 5);
     spot.endDraw();
     image(spot, 0, 0);

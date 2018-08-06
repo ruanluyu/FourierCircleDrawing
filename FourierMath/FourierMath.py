@@ -132,7 +132,7 @@ for s in range(0,steps):#代入点数据，开始主要计算函数
     out.append(clst)
 print("Main calculation finished.")
 
-File = open("datas.txt", "w")#讲结果写入硬盘
+File = open("datas.txt", "w")#把结果写入硬盘
 for dc in out:
     File.write("{0}".format(dc))
     File.write("\n")

@@ -43,6 +43,8 @@ def cpToList(cp):
     return [cp.real,cp.imag]
 start = 0
 end = 1000#圆圈数量
+prjNum = end-start+1
+prjCur = None
 points = []#贝塞尔采集点
 out = []#输出用坐标容器
 center = [500,500]#中心点位置
@@ -50,23 +52,25 @@ curWeight = []#各段曲线的时间权重容器
 trDatas = []#临时容器
 sharedPoints = None
 
-def initParam(pts,cw):
-    global points,curWeight
+def initParam(pts,cw,pjc):
+    global points,curWeight,prjCur
     points = pts
     curWeight = cw
-    return
+    prjCur = pjc
 
 def mainCalculation(s):
-    global points,curWeight
+    global points,curWeight,prjCur
     m = 0
     if s>0: 
         m = ((s+1)//2)*(-1 if (s%2 == 0) else 1)
-    print("Now working on orbit {0},m = {1}".format(s,m))
+    #print("Now working on orbit {0},m = {1}".format(s,m))
     sum = 0j
     for i in range(len(points)):
         cs = linear(curWeight[i],0,1,0,math.pi*2)
         ce = linear(curWeight[i+1],0,1,0,math.pi*2)
         sum += numSolve(m,cs,ce,points[i])
+    with prjCur.get_lock():
+        prjCur.value += 1
     return cpToList(sum)
 
 
@@ -138,17 +142,27 @@ if __name__ == '__main__':
     curWeight[-1] = 1
     print("Weight process finished.")
     #print(points)
-    print("Main calculation start.")
     out = []
     print("Initializing...")
     multiprocessing.freeze_support()#并行计算开始
-    pool = multiprocessing.Pool(initializer = initParam,initargs = (points,curWeight))
+    prjCur = multiprocessing.Value('i',0)
+    pool = multiprocessing.Pool(initializer = initParam,initargs = (points,curWeight,prjCur))
     print("Initializing finished.")
-    #sharedPoints = multiprocessing.Manager().list(points)
-    #print(sharedPoints)
-    out = pool.map(mainCalculation, range(start,end+1))
+    print("Main calculation start.")
+    out = pool.map_async(mainCalculation, range(start,end+1))
+    division = 50
+    while True :
+        percentage = prjCur.value/prjNum
+        nump = round(percentage*division)
+        print("[{}{}] {:.0%}".format("="*nump," "*(division-nump),percentage),end = '\r',flush = True)
+        if prjCur.value>=prjNum : 
+            print()
+            break
+        time.sleep(0.1)
     pool.close()
     pool.join()
+    out.wait()
+    out = out.get()
     print("Main calculation finished.")
     with open("datas.txt", "w") as File:#把结果写入硬盘
         for dc in out:

@@ -1,6 +1,7 @@
 import math
 import cmath
 import re
+import time
 import multiprocessing
 
 '''
@@ -47,12 +48,21 @@ out = []#输出用坐标容器
 center = [500,500]#中心点位置
 curWeight = []#各段曲线的时间权重容器
 trDatas = []#临时容器
+sharedPoints = None
+
+def initParam(pts,cw):
+    global points,curWeight
+    points = pts
+    curWeight = cw
+    return
+
 def mainCalculation(s):
+    global points,curWeight
     m = 0
     if s>0: 
         m = ((s+1)//2)*(-1 if (s%2 == 0) else 1)
     print("Now working on orbit {0},m = {1}".format(s,m))
-    sum = 0+0j
+    sum = 0j
     for i in range(len(points)):
         cs = linear(curWeight[i],0,1,0,math.pi*2)
         ce = linear(curWeight[i+1],0,1,0,math.pi*2)
@@ -127,19 +137,22 @@ if __name__ == '__main__':
     curWeight.insert(0,0)
     curWeight[-1] = 1
     print("Weight process finished.")
-    #print(curWeight)
+    #print(points)
     print("Main calculation start.")
     out = []
+    print("Initializing...")
     multiprocessing.freeze_support()#并行计算开始
-    pool = multiprocessing.Pool()
-    out = list(pool.map(mainCalculation, range(start,end+1)))
+    pool = multiprocessing.Pool(initializer = initParam,initargs = (points,curWeight))
+    print("Initializing finished.")
+    #sharedPoints = multiprocessing.Manager().list(points)
+    #print(sharedPoints)
+    out = pool.map(mainCalculation, range(start,end+1))
     pool.close()
     pool.join()
     print("Main calculation finished.")
-    File = open("datas.txt", "w")#把结果写入硬盘
-    for dc in out:
-        File.write("{0}".format(dc))
-        File.write("\n")
-    File.close()
+    with open("datas.txt", "w") as File:#把结果写入硬盘
+        for dc in out:
+            File.write("{0}".format(dc))
+            File.write("\n")
     print("Data saved.\n\nWork finished.\n")#完成提示
 

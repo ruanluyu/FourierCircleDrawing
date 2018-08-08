@@ -1,6 +1,8 @@
 import math
 import cmath
 import re
+import multiprocessing
+
 '''
 作者：中梓星音
 简介：
@@ -36,8 +38,8 @@ def numSolve(m,cs,ce,pts):#主要计算函数2-贝塞尔曲线方程代入
     return (-pts[0]+3*pts[1]-3*pts[2]+pts[3])*prSolve(m,cs,ce,3)+3*(pts[0]-2*pts[1]+pts[2])*prSolve(m,cs,ce,2)+3*(-pts[0]+pts[1])*prSolve(m,cs,ce,1)+pts[0]*prSolve(m,cs,ce,0)
 
 
-
-steps = 1000#圆圈数量
+start = 0
+end = 1000#圆圈数量
 points = []#贝塞尔采集点
 out = []#输出用坐标容器
 center = [500,500]#中心点位置
@@ -114,28 +116,31 @@ curWeight.insert(0,0)
 curWeight[-1] = 1
 print("Weight process finished.")
 #print(curWeight)
-print("Main calculation start.")
-for s in range(0,steps):#代入点数据，开始主要计算函数
+
+def mainCalculation(s):
     m = 0
     if s>0: 
         m = ((s+1)//2)*(-1 if (s%2 == 0) else 1)
     print("Now working on orbit {0},m = {1}".format(s,m))
     sum = 0+0j
     for i in range(len(points)):
-        #print("Processing bezier id : {0} ".format(i))
         cs = linear(curWeight[i],0,1,0,math.pi*2)
         ce = linear(curWeight[i+1],0,1,0,math.pi*2)
-        #sum += calCompute(cs,ce,m,points[i])
         sum += numSolve(m,cs,ce,points[i])
-    clst = cpToList(sum)
-    #print("Result : {0}".format(clst))
-    out.append(clst)
-print("Main calculation finished.")
+    return cpToList(sum)
 
+print("Main calculation start.")
+out = []
+if __name__ == '__main__':#并行计算开始
+    multiprocessing.freeze_support()
+    pool = multiprocessing.Pool()
+    out = list(pool.map(mainCalculation, range(start,end+1)))
+    pool.close()
+    pool.join()
+print("Main calculation finished.")
 File = open("datas.txt", "w")#把结果写入硬盘
 for dc in out:
     File.write("{0}".format(dc))
     File.write("\n")
 File.close()
-
 print("Data saved.\n\nWork finished.\n")#完成提示

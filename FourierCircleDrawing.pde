@@ -1,7 +1,7 @@
 float datas[][] = null;
 float rp[][] = null;
 int maxCircle = -1;//Max num off circle,unlimited when it is -1
-float rotationSpeed = 0.001f;//Speed of rotation
+float rotationSpeed = 0.0003f;//Speed of rotation
 
 void setup() {
 
@@ -31,7 +31,7 @@ PVector size = new PVector(1, 1); // pixel/unit
 PGraphics spot = null;
 PGraphics coord = null;
 PVector lastPos = new PVector();
-float t = -0.3f;//init t.If you want program to start drawing at beginning,set this to 0.
+float t = -0f;//init t.If you want program to start drawing at beginning,set this to 0.
 int reversey = 1;
 
 void draw() {
@@ -61,13 +61,13 @@ void draw() {
   ellipse(pointer.x*size.x+width/2f, reversey*pointer.y*size.y+height/2f, 8, 8);
   if(t>=0){
     spot.beginDraw();
-    //spot.noStroke();
-    spot.stroke(0, 155, 255);
-    spot.strokeWeight(3);
+    spot.noStroke();
+    //spot.stroke(0, 155, 255);
+    //spot.strokeWeight(3);
     spot.fill(0, 155, 255);
     spot.translate(spot.width/2f, spot.height/2f);
-    spot.line(lastPos.x*size.x,lastPos.y*size.y,pointer.x*size.x,pointer.y*size.y);
-    //spot.ellipse(pointer.x*size.x, reversey*pointer.y*size.y, 5, 5);
+    //spot.line(lastPos.x*size.x,lastPos.y*size.y,pointer.x*size.x,pointer.y*size.y);
+    spot.ellipse(pointer.x*size.x, reversey*pointer.y*size.y, 5, 5);
     spot.endDraw();
     image(spot, 0, 0);
   }

@@ -1,4 +1,5 @@
-# FourierCircleDrawing  
+# FourierCircleDrawing
+！！重要！！请务必在名为“FourierCircleDrawing”的文件夹下pull整个工程。或者下载zip文件，解压到一个名为“FourierCircleDrawing”的文件夹下  
 python源码里面的steps是控制圆圈的数量的变量。大家可以调节这个变量来控制最终轨道的数量  
 根目录下的“Report.pdf”是计算思路概述  
 ↓click this picture to watch video.点击图片查看效果视频  

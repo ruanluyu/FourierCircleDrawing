@@ -32,11 +32,16 @@ PGraphics spot = null;
 PGraphics coord = null;
 PVector lastPos = new PVector();
 float t = -0f;//init t.If you want program to start drawing at beginning,set this to 0.
+float at = 0f;
+float atv = 0.1f;
+float atf = 100f;
+float atT = 0.5f;
 int reversey = 1;
 
 void draw() {
   background(255);
   t+=rotationSpeed;
+  at+=atv;
   image(coord, 0, 0);
   PVector center = new PVector();
   PVector pointer = new PVector();
@@ -45,6 +50,8 @@ void draw() {
   int num = (maxCircle>0)?min(maxCircle,datas.length):datas.length;
   for (int i = 0; i<num; i++) {
     int m = 0;
+    float aph = map(sin(((1-(float)i/num)*atf+at)/atT),-1,1,50,255);
+    
     if (i>0) m = ((i+1)/2)*((i%2 == 0)?-1:1);
     float r = rp[i][0];
     stroke(175);
@@ -52,7 +59,7 @@ void draw() {
     float theta = reversey*t*m+rp[i][1];
     pointer.add(new PVector(r*cos(theta), r*sin(theta)));
     if (m == 0) pointer.set(datas[0][0], datas[0][1]);
-    stroke(100);
+    stroke(100,(aph<240?255:0));
     line(center.x*size.x+width/2f, reversey*center.y*size.y+height/2f, pointer.x*size.x+width/2f, reversey*pointer.y*size.y+height/2f);
     center.set(pointer);
   }

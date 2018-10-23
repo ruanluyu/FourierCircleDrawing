@@ -1,5 +1,5 @@
 # FourierCircleDrawing
-网页端预览程序：https://fcd.hitomi.tech/
+网页端预览程序：https://fcd.hitomi.tech/ 
 工程加载到本地（Windows）：首先下载安装git bash（https://gitforwindows.org/）  
 然后只下载 https://github.com/ruanluyu/FourierCircleDrawing/blob/master/Install.bat  
 把Install.bat放到目标文件后，双击它就可以部署工程。  

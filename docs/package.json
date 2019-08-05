@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "node_modules/.bin/parcel ./src/index.html ./src/worker.js",
+    "build": "node_modules/.bin/parcel build ./src/index.html ./src/worker.js"
+  },
+  "dependencies": {
+    "mathjs": "^5.1.2",
+    "svg-path-parser": "^1.1.0",
+    "victor": "^1.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.9.7"
+  }
+}

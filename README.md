@@ -4,6 +4,8 @@
 
 工程加载到本地（Windows）：
 
+1. 科学上网
+
 1. [下载安装git bash](https://gitforwindows.org/) 
 
 1. 打开控制台，找到一个文件夹执行下面的指令

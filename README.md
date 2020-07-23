@@ -26,5 +26,5 @@ center = [500,500] # 中心点位置，例如这里的[500,500]会让1000x1000�
 ```
 > 根目录下的“Report.pdf”是计算思路概述,也可以通过进入[我们的论坛](https://world.milai.tech/study/cg/proof-1000-circle-miku.html)来查看。
 
-↓click this picture to watch video.点击图片查看效果视频  
+点击图片查看效果视频  
 [![Watch the video](https://raw.githubusercontent.com/ruanluyu/FourierCircleDrawing/master/Resource/miku.jpg)](https://www.bilibili.com/video/av28374720)

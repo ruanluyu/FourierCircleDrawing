@@ -17,6 +17,7 @@ git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 
 绘图工程运行软件：[Processing](https://processing.org/download/)
 
+[使用教程](https://www.bilibili.com/video/av28374720)
 
 python源码里面的steps是控制圆圈的数量的变量。大家可以调节这个变量来控制最终轨道的数量  
 根目录下的“Report.pdf”是计算思路概述,也可以通过进入[我们的论坛](https://world.milai.tech/study/cg/proof-1000-circle-miku.html)来查看。

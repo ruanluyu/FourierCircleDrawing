@@ -19,7 +19,7 @@ git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 
 [使用教程](https://www.bilibili.com/video/av28374720)
 
-python源码里面的steps是控制圆圈的数量的变量。大家可以调节这个变量来控制最终轨道的数量  
+python源码里面的steps是控制圆圈的数量的变量。可以调节这个变量来控制最终轨道的数量  
 ```python3
 end = 1000 # 圆圈数量
 center = [500,500] # 中心点位置，例如这里的[500,500]会让1000x1000的矢量图在坐标轴中居中显示。

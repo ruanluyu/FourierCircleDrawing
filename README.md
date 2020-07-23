@@ -13,8 +13,9 @@
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```
 
-计算工程的运行环境：[VS2017 Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/) (或更新的VS)
-绘图工程运行环境：[Processing](https://processing.org/download/)
+计算工程的运行软件：[VS2017 Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/) (或更新的VS)
+
+绘图工程运行软件：[Processing](https://processing.org/download/)
 
 
 python源码里面的steps是控制圆圈的数量的变量。大家可以调节这个变量来控制最终轨道的数量  

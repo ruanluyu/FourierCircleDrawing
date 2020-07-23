@@ -1,6 +1,6 @@
 # FourierCircleDrawing
 网页端预览程序：http://fcd.milai.tech/    
-网页端程序：将滑竿拖到最下面，点击run  
+网页端程序：将滑竿拖到最下面，点击run，待计算完后，点击play
 
 工程加载到本地（Windows）：
 

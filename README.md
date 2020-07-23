@@ -4,7 +4,7 @@
 工程加载到本地（Windows）：首先[下载安装git bash](https://gitforwindows.org/) 
 
 然后打开控制台，找到一个文件夹执行下面的指令
-```
+```cmd
 mkdir FourierCircleDrawing && cd FourierCircleDrawing  
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```

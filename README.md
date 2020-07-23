@@ -13,7 +13,7 @@
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```
 
-计算工程的运行软件：[VS2017 Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/) (或更新的VS)
+计算工程的运行软件：[Visual studio Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/) (或更新的VS)
 
 绘图工程运行软件：[Processing](https://processing.org/download/)
 

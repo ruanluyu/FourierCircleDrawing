@@ -4,7 +4,7 @@
 
 工程加载到本地（Windows）：
 
-1. 科学上网
+1. 科学上网 （不会科学上网的同学直接戳这里：链接：https://pan.baidu.com/s/13vXObnFeqmr1pXzR1eykHg 密码：y5ai）
 
 1. [下载安装git bash](https://gitforwindows.org/) 
 

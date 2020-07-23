@@ -2,7 +2,7 @@
 网页端预览程序：http://fcd.milai.tech/    
 网页端程序：将滑竿拖到最下面，点击run  
 工程加载到本地（Windows）：首先[下载安装git bash](https://gitforwindows.org/) 
-然后只下载 https://github.com/ruanluyu/FourierCircleDrawing/blob/master/Install.bat  
+然后[右键另存为这个链接](https://github.com/ruanluyu/FourierCircleDrawing/blob/master/Install.bat)  
 把Install.bat放到任意文件后，双击它就可以部署工程。  
 python源码里面的steps是控制圆圈的数量的变量。大家可以调节这个变量来控制最终轨道的数量  
 根目录下的“Report.pdf”是计算思路概述,也可以通过进入[我们的论坛](https://world.milai.tech/study/cg/proof-1000-circle-miku.html)来查看。

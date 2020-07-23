@@ -8,7 +8,7 @@
 
 1. [下载安装git bash](https://gitforwindows.org/) 
 
-1. 打开控制台，随便找进入一个文件夹执行下面的指令
+1. 打开控制台，随便进入一个文件夹执行下面的指令
 ```cmd
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```

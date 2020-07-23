@@ -15,7 +15,7 @@ git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 
 计算工程的运行软件：[Visual studio Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/)
 
-绘图工程运行软件：[Processing](https://processing.org/download/)
+绘图工程的运行软件：[Processing](https://processing.org/download/)
 
 [使用教程](https://www.bilibili.com/video/av28374720)
 

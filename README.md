@@ -17,7 +17,7 @@ git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 
 绘图工程的运行软件：[Processing](https://processing.org/download/)
 
-[使用教程](https://www.bilibili.com/video/av28374720)
+[使用教程](https://www.bilibili.com/video/av28374720?t=2m17s)
 
 python源码里面的steps是控制圆圈的数量的变量。可以调节这个变量来控制最终轨道的数量  
 ```python3

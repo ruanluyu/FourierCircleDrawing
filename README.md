@@ -38,7 +38,7 @@ center = [500,500] # 中心点位置，例如这里的[500,500]会让1000x1000�
 > 根目录下的“Report.pdf”是计算思路概述,也可以通过进入[我们的论坛](https://pw.yuelili.com/study/cg/proof-1000-circle-miku.html)来查看。
 
 - 本工程的计算思路和程序设计均由中梓星音独立完成。请注意我们的工程支持贝塞尔曲线的解析计算（非近似解），与各大主流媒体公开的傅立叶级数计算的技术（多项式近似）不同。最近由于3B1B公开了科普视频导致本工程备受关注，但请注意：因为FCD工程是早在3B1B对傅立叶级数的科普视频发布之前创立并开发的，所以有可能这个工程与3B1B的视频介绍的计算思路大相径庭，在骇入程序的时候还请注意。
-- 本工程使用MIT证书公开，允许未经许可的商业使用和个人修改使用，但不保证工程的稳健性。
+- 本工程使用MIT证书公开，允许未经许可的商业使用和个人修改使用，但不保证工程的稳健性。（[证书详情](https://github.com/ruanluyu/FourierCircleDrawing/blob/master/LICENSE)）
 
 点击图片查看效果视频  
 [![Watch the video](https://raw.githubusercontent.com/ruanluyu/FourierCircleDrawing/master/Resource/miku.jpg)](https://www.bilibili.com/video/av28374720)

@@ -14,9 +14,15 @@
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```
 
+接下来你需要保证电脑安装了如下软件：
+
 计算工程的运行软件：[Visual studio Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/)
 
 绘图工程的运行软件：[Processing](https://processing.org/download/)
+
+路径h绘制和输出工具：[Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
+
+最后，按照下面的视频操作即可
 
 [使用教程](https://www.bilibili.com/video/av28374720?t=2m17s)
 

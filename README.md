@@ -3,7 +3,9 @@
 网页端程序：将滑竿拖到最下面，点击run，待计算完后，点击play
 **(注意：网页端不支持自定义路径，如果你想绘制自己的图形，需要参照下面的步骤)**
 
-工程加载到本地（Windows）：
+
+
+## 1.工程加载到本地（Windows）：
 
 1. 科学上网 （不会科学上网的同学直接戳这里：链接：https://pan.baidu.com/s/13vXObnFeqmr1pXzR1eykHg 密码：y5ai）
 
@@ -14,7 +16,7 @@
 git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 ```
 
-接下来你需要保证电脑安装了如下软件：
+## 2.接下来你需要保证电脑安装了如下软件：
 
 计算工程的运行软件：[Visual studio Community 的 Python3](https://visualstudio.microsoft.com/zh-hans/vs/)
 
@@ -22,9 +24,11 @@ git clone https://github.com/ruanluyu/FourierCircleDrawing.git
 
 路径h绘制和输出工具：[Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
 
-最后，按照下面的视频操作即可
+## 3.最后，按照下面的视频操作即可
 
 [使用教程](https://www.bilibili.com/video/av28374720?t=2m17s)
+
+## 其它注意事项
 
 python源码里面的steps是控制圆圈的数量的变量。可以调节这个变量来控制最终轨道的数量  
 ```python3

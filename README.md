@@ -1,6 +1,5 @@
 # FourierCircleDrawing
-网页端预览程序：http://fcd.milai.tech/    
-网页端程序：将滑竿拖到最下面，点击run，待计算完后，点击play
+网页端预览程序：https://pw.yuelili.com/study/cg/proof-1000-circle-miku.html
 > 注意：网页端不支持自定义路径，如果你想绘制自己的图形，需要参照下面的步骤
 
 
